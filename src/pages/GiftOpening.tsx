@@ -131,42 +131,6 @@ const heartfeltMessages = [
     text: "Moti ❤️",
     image: "/gift-compressed/PHOTO-2022-12-05-23-10-07.jpg"
   },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2022-12-10-13-09-17.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2022-12-10-22-50-27.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2022-12-16-16-08-11.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2022-12-24-21-15-50.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-01-10-20-25-44.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-01-31-21-12-33.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-02-04-13-15-16.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-02-13-00-28-03.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-02-13-00-28-03.jpg"
-  },
 ];
 
 // 25 Selected memory photos to show after messages
