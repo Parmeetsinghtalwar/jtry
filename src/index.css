@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm Romantic Theme - Soft Blue & Pink Palette */
+    --background: 210 40% 98%;
+    --foreground: 340 25% 20%;
+
+    --card: 200 45% 99%;
+    --card-foreground: 340 25% 20%;
+
+    --popover: 200 45% 99%;
+    --popover-foreground: 340 25% 20%;
+
+    /* Soft Light Blue */
+    --primary: 200 65% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Rose Pink */
+    --secondary: 340 70% 88%;
+    --secondary-foreground: 340 35% 25%;
+
+    /* Powder Blue Muted */
+    --muted: 210 35% 92%;
+    --muted-foreground: 210 20% 45%;
+
+    /* Warm Coral Accent */
+    --accent: 350 75% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Soft Rose Red */
+    --destructive: 355 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 200 65% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom romantic colors */
+    --sky-blue: 200 65% 65%;
+    --sky-blue-light: 195 60% 80%;
+    --sky-blue-glow: 200 75% 70%;
+    --rose-pink: 340 75% 75%;
+    --blush-pink: 350 70% 85%;
+    --coral: 10 75% 70%;
+    --peach: 20 80% 80%;
+    --cream: 210 40% 98%;
+    --cream-dark: 210 30% 94%;
+    --ivory: 200 45% 99%;
+    --slate: 340 25% 20%;
+    --slate-light: 340 15% 40%;
+
+    /* Gradients */
+    --gradient-golden: linear-gradient(135deg, hsl(200, 65%, 65%) 0%, hsl(340, 75%, 75%) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(210, 40%, 98%) 0%, hsl(200, 45%, 94%) 50%, hsl(340, 50%, 92%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(200, 45%, 99%) 0%, hsl(210, 40%, 96%) 100%);
+    --gradient-glow: radial-gradient(circle, hsl(200, 75%, 70%, 0.35) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(200, 30%, 40%, 0.12);
+    --shadow-warm: 0 8px 30px -8px hsl(340, 75%, 65%, 0.25);
+    --shadow-glow: 0 0 40px hsl(200, 75%, 70%, 0.35);
+
+    /* Sidebar - warm theme */
+    --sidebar-background: 210 35% 96%;
+    --sidebar-foreground: 340 25% 25%;
+    --sidebar-primary: 200 65% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 70% 88%;
+    --sidebar-accent-foreground: 340 35% 25%;
+    --sidebar-border: 210 30% 88%;
+    --sidebar-ring: 200 65% 65%;
+  }
+
+  .dark {
+    /* Keep light theme for this romantic site */
+    --background: 210 40% 98%;
+    --foreground: 340 25% 20%;
+    --card: 200 45% 99%;
+    --card-foreground: 340 25% 20%;
+    --popover: 200 45% 99%;
+    --popover-foreground: 340 25% 20%;
+    --primary: 200 65% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 70% 88%;
+    --secondary-foreground: 340 35% 25%;
+    --muted: 210 35% 92%;
+    --muted-foreground: 210 20% 45%;
+    --accent: 350 75% 70%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 355 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 200 65% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Lato', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Cormorant Garamond', serif;
+    @apply font-semibold tracking-wide;
+  }
+}
+
+@layer components {
+
+  /* Petal Animation */
+  @keyframes petal-fall {
+    0% {
+      transform: translateY(-10vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(110vh) translateX(100px) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes petal-sway {
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(30px);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-15px) rotate(5deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsl(200, 75%, 70%, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px hsl(200, 75%, 70%, 0.6);
+    }
+  }
+
+  @keyframes bloom {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes sparkle {
+
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes gift-glow {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 15px hsl(200, 75%, 70%, 0.4));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 30px hsl(200, 75%, 70%, 0.7));
+    }
+  }
+
+  @keyframes lid-open {
+    0% {
+      transform: rotateX(0deg) translateY(0);
+    }
+
+    100% {
+      transform: rotateX(-120deg) translateY(-20px);
+    }
+  }
+
+  @keyframes light-burst {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(3);
+    }
+  }
+
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Utility classes */
+  .animate-petal-fall {
+    animation: petal-fall linear infinite;
+  }
+
+  .animate-petal-sway {
+    animation: petal-sway 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-bloom {
+    animation: bloom 0.6s ease-out forwards;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  .animate-gift-glow {
+    animation: gift-glow 2s ease-in-out infinite;
+  }
+
+  .animate-lid-open {
+    animation: lid-open 0.8s ease-out forwards;
+    transform-origin: top center;
+  }
+
+  .animate-light-burst {
+    animation: light-burst 1s ease-out forwards;
+  }
+
+  .animate-confetti-fall {
+    animation: confetti-fall 3s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-slow {
+    animation: fade-in 2s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(200, 75%, 75%, 0.4) 50%,
+        transparent 100%);
+    background-size: 200% 100%;
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Balloon Float Up Animation */
+  @keyframes balloon-rise {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-120vh) rotate(15deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-balloon-rise {
+    animation: balloon-rise 6s ease-out forwards;
+  }
+
+  /* Crossfade Animation for Images */
+  @keyframes crossfade {
+    0% {
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-crossfade {
+    animation: crossfade 6s ease-in-out infinite;
+  }
+
+  /* Disco Light Animation */
+  @keyframes disco {
+    0% {
+      filter: hue-rotate(0deg) brightness(1);
+      box-shadow: 0 0 60px rgba(255, 0, 255, 0.5), 0 0 100px rgba(0, 255, 255, 0.3);
+    }
+
+    25% {
+      filter: hue-rotate(90deg) brightness(1.1);
+      box-shadow: 0 0 80px rgba(255, 255, 0, 0.5), 0 0 120px rgba(255, 0, 128, 0.3);
+    }
+
+    50% {
+      filter: hue-rotate(180deg) brightness(1.2);
+      box-shadow: 0 0 100px rgba(0, 255, 0, 0.5), 0 0 140px rgba(0, 128, 255, 0.3);
+    }
+
+    75% {
+      filter: hue-rotate(270deg) brightness(1.1);
+      box-shadow: 0 0 80px rgba(255, 128, 0, 0.5), 0 0 120px rgba(128, 0, 255, 0.3);
+    }
+
+    100% {
+      filter: hue-rotate(360deg) brightness(1);
+      box-shadow: 0 0 60px rgba(255, 0, 255, 0.5), 0 0 100px rgba(0, 255, 255, 0.3);
+    }
+  }
+
+  .animate-disco {
+    animation: disco 3s linear infinite;
+  }
+
+  /* Disco Background Lights */
+  @keyframes disco-bg {
+
+    0%,
+    100% {
+      background-color: rgba(255, 0, 128, 0.1);
+    }
+
+    20% {
+      background-color: rgba(0, 255, 255, 0.15);
+    }
+
+    40% {
+      background-color: rgba(255, 255, 0, 0.1);
+    }
+
+    60% {
+      background-color: rgba(128, 0, 255, 0.15);
+    }
+
+    80% {
+      background-color: rgba(0, 255, 128, 0.1);
+    }
+  }
+
+  .animate-disco-bg {
+    animation: disco-bg 2s ease-in-out infinite;
+  }
+
+  /* Sparkle burst */
+  @keyframes sparkle-burst {
+    0% {
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.5) rotate(180deg);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(0) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-sparkle-burst {
+    animation: sparkle-burst 1.5s ease-out infinite;
+  }
+
+  /* Blob animation for login screen */
+  @keyframes blob {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+      transform: translate(20px, -50px) scale(1.1);
+    }
+
+    50% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    75% {
+      transform: translate(50px, 50px) scale(1.05);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Shake animation for error messages */
+  @keyframes shake {
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .bg-gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .bg-gradient-golden {
+    background: var(--gradient-golden);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .bg-gradient-glow {
+    background: var(--gradient-glow);
+  }
+
+  /* Shadows */
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Romantic card styles */
+  .romantic-card {
+    @apply bg-card rounded-2xl shadow-soft border border-border/50;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--cream-dark)) 100%);
+  }
+
+  /* Paper texture for letter */
+  .paper-texture {
+    background-color: hsl(var(--ivory));
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* Floral border */
+  .floral-border {
+    border-image: linear-gradient(135deg,
+        hsl(var(--sky-blue)) 0%,
+        hsl(var(--rose-pink)) 25%,
+        hsl(var(--sky-blue)) 50%,
+        hsl(var(--peach)) 75%,
+        hsl(var(--sky-blue)) 100%) 1;
+  }
+
+  /* Touch-friendly button */
+  .touch-friendly {
+    @apply min-h-[48px] px-6;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-warm);
+  }
+
+  /* Mobile tap effect */
+  .tap-pulse {
+    @apply transition-transform duration-150 active:scale-95;
+  }
+
+  /* Scroll reveal animation triggers */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
