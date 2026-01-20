@@ -8,7 +8,7 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const photos = [
   {
     id: 1,
-    url: "/assest/Gemini_Generated_Image_a9xw9ya9xw9ya9xw.png",
+    url: "/assest/Gemini_Generated_Image_a9xw9ya9xw9ya9xw.jpg",
     caption: "My Sunshine ☀️"
   },
   {
@@ -18,32 +18,32 @@ const photos = [
   },
   {
     id: 3,
-    url: "/assest/2.png",
+    url: "/assest/2.jpg",
     caption: "Moti"
   },
   {
     id: 4,
-    url: "/assest/3.png",
+    url: "/assest/3.jpg",
     caption: "Boni"
   },
   {
     id: 5,
-    url: "/assest/4.png",
+    url: "/assest/4.jpg",
     caption: "Pagal"
   },
   {
     id: 6,
-    url: "/assest/5.png",
+    url: "/assest/5.jpg",
     caption: "Sundar"
   },
   {
     id: 7,
-    url: "/assest/6.png",
+    url: "/assest/6.jpg",
     caption: "bhalu"
   },
   {
     id: 8,
-    url: "/assest/7.png",
+    url: "/assest/7.jpg",
     caption: "honey chili patato"
   },
   {
