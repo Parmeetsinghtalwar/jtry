@@ -13,7 +13,7 @@ const songs = [
     reason: "Because you are perfect to me, in every way imaginable.",
     color: "from-rose to-sky-light",
     audioUrl: "/song/perfect.mp3",
-    videoUrl: "/video/IMG_4164.mp4"
+    videoUrl: "/video/IMG_4164.MOV"
   },
   {
     title: "Pehla Nasha",
@@ -21,7 +21,7 @@ const songs = [
     reason: "First love, new feelings, everything is magical with you.",
     color: "from-sky to-rose",
     audioUrl: "", // No external audio, use video audio
-    videoUrl: "/video/pehela-nasha.mp4"
+    videoUrl: "/video/pehela-nasha.MOV"
   },
   {
     title: "Maharani",
@@ -29,7 +29,7 @@ const songs = [
     reason: "Because you are the queen of my world.",
     color: "from-rose-light to-sky",
     audioUrl: "/song/maharani.mp3",
-    videoUrl: "/video/maharani.mp4"
+    videoUrl: "/video/maharani.MOV"
   },
   {
     title: "Desi Girl",
