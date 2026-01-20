@@ -108,15 +108,15 @@ const heartfeltMessages = [
     image: "/gift-compressed/PHOTO-2022-09-30-20-02-40.jpg"
   },
   {
-    text: "Moti ❤️",
+    text: "100 pagal",
     image: "/gift-compressed/PHOTO-2022-10-08-13-11-38.jpg"
   },
   {
-    text: "Moti ❤️",
+    text: "lub",
     image: "/gift-compressed/PHOTO-2022-10-09-18-03-38.jpg"
   },
   {
-    text: "Moti ❤️",
+    text: "daru",
     image: "/gift-compressed/PHOTO-2022-10-25-01-22-48.jpg"
   },
   {
@@ -165,43 +165,7 @@ const heartfeltMessages = [
   },
   {
     text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-03-03-15-38-03.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-03-29-21-15-09.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-04-22-21-27-44.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-06-19-22-19-45.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-07-22-22-25-11.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-08-06-10-38-04.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-08-27-20-13-32.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2023-12-15-13-02-57.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2024-01-30-22-47-16.jpg"
-  },
-  {
-    text: "Moti ❤️",
-    image: "/gift-compressed/PHOTO-2025-12-29-13-52-56.jpg"
+    image: "/gift-compressed/PHOTO-2023-02-13-00-28-03.jpg"
   },
 ];
 
@@ -451,6 +415,8 @@ const GiftOpening = () => {
         ref={audioRef}
         src="/song/dor.mp3"
         loop
+        autoPlay
+        onEnded={() => audioRef.current?.play()}
         preload="auto"
       />
     </div>
